@@ -1,0 +1,20 @@
+  <section class="user-cart">
+    <header class="user-cart__header">
+      <h2>User Cart</h2>
+      <button type="button" {{on "click" (fn this.closeCart)}}>Close</button>
+    </header>
+    {{#if this.userCart.contentComponent}}
+      <div class="user-cart__action-panel" id="user-cart-action-panel">
+        <button class="user-cart__back" type="button" {{on "click" (fn this.goBack)}}>Back</button>
+        {{component this.userCart.contentComponent}}
+      </div>
+    {{else}}
+      <div class="user-cart__bulk-actions">
+        <BulkActions as |bulkActions|>
+          {{#each bulkActions as |bulkAction|}}
+            {{component bulkAction.component}}
+          {{/each}}
+        </BulkActions>
+      </div>
+    {{/if}}
+  </section>

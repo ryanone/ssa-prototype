@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  background: #ddd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bulk-actions-footer {
+  align-self: flex-end;
+  background: #f99;
+  width: 100%;
+}
+
+.user-cart {
+  background: #88f;
+  width: 300px;
+}
+
+.user-cart__header {
+  display: flex;
+}
+
+.user-cart__header h2 {
+  flex-grow: 1;
+}
+
+.users-list-actions {
+  flex-grow: 1;
+}

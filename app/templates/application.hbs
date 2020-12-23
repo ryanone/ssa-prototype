@@ -1,5 +1,19 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<main>
 
-{{outlet}}
+  <div class="users-list-actions">
+    <h1>SSA Prototype</h1>
+    <button type="button" {{on "click" (fn this.showCart)}}>Open Cart</button>
+  </div>
+
+  <footer class="bulk-actions-footer">
+    <BulkActions as |bulkActions|>
+      {{#each bulkActions as |bulkAction|}}
+        {{component bulkAction.component}}
+      {{/each}}
+    </BulkActions>
+  </footer>
+</main>
+
+{{#if this.userCart.isCartOpen}}
+  <UserCart/>
+{{/if}}
